@@ -4,15 +4,16 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="417.0" prefWidth="595.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+<AnchorPane prefHeight="453.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
    <children>
-      <AnchorPane layoutX="233.0" layoutY="33.0" prefHeight="447.0" prefWidth="362.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="244.0" layoutY="31.0" prefHeight="440.0" prefWidth="362.0" style="-fx-background-color: #000000;">
          <children>
             <AnchorPane layoutX="13.0" layoutY="8.0" prefHeight="44.0" prefWidth="335.0" style="-fx-background-color: #FFFFFF;">
                <children>
@@ -43,11 +44,6 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="passwordTextField" layoutX="16.0" layoutY="175.0" prefHeight="26.0" prefWidth="335.0" promptText="ENTER THE PASSWORD">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-            </TextField>
             <Hyperlink fx:id="forgotpasslink" layoutX="126.0" layoutY="263.0" onAction="#forgotPass" text="Frogot Password" textFill="WHITE" underline="true" wrapText="true" />
             <Button fx:id="login" layoutX="55.0" layoutY="224.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="30.0" prefWidth="114.0" text="LOGIN" textAlignment="CENTER" wrapText="true">
                <font>
@@ -55,9 +51,11 @@
                </font>
             </Button>
             <Label fx:id="invalid" layoutX="167.0" layoutY="52.0" />
-            <Label layoutX="113.0" layoutY="61.0" text="Invalid Email/Password!!" textFill="WHITE">
+            <PasswordField fx:id="passwordTextField" layoutX="16.0" layoutY="175.0" prefHeight="26.0" prefWidth="335.0" />
+            <Label fx:id="messageLabel" layoutX="167.0" layoutY="61.0" />
+            <Label fx:id="loginMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="71.0" prefHeight="16.0" prefWidth="335.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
-                  <Font name="Arial Bold" size="12.0" />
+                  <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
          </children>
@@ -112,7 +110,7 @@
             <Image url="@call.png" />
          </image>
       </ImageView>
-      <ButtonBar layoutX="233.0" layoutY="-6.0" prefHeight="40.0" prefWidth="362.0" style="-fx-background-color: #000000;">
+      <ButtonBar layoutX="244.0" layoutY="-6.0" prefHeight="40.0" prefWidth="362.0" style="-fx-background-color: #000000;">
         <buttons>
           <Button fx:id="closeButton" minWidth="42.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="26.0" text="X">
                <font>

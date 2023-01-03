@@ -8,7 +8,6 @@
     <artifactId>EDMS</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>EDMS</name>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.8.2</junit.version>

@@ -3,10 +3,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,17 +18,19 @@ public class LoginController {
     @FXML
     private Hyperlink forgotpasslink;
 
-    @FXML
-    private Label invalid;
 
     @FXML
     private Button login;
 
     @FXML
-    private TextField passwordTextField;
+    private Label loginMessageLabel;
 
     @FXML
+    private PasswordField passwordTextField;
+    private String customerEmail;
+    @FXML
     private Button register;
+    Login log = new Login();
 
     @FXML
     void forgotPass(ActionEvent event) throws IOException {
@@ -47,8 +46,22 @@ public class LoginController {
     }
 
     @FXML
-    void loginButton(ActionEvent event) {
-
+    void loginButton(ActionEvent event) throws IOException {
+        String email = emailTextField.getText();
+        String password = passwordTextField.getText();
+        try{
+            if(log.customerLogin(email,password)){
+                Parent root = FXMLLoader.load(getClass().getResource("OTP.fxml"));
+                Stage window = (Stage) login.getScene().getWindow();
+                window.setScene(new Scene(root));
+            }
+            else{
+                loginMessageLabel.setText("Invalid Email/Password");
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @FXML

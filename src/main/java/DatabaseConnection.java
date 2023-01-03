@@ -1,4 +1,3 @@
-import javax.swing.plaf.nimbus.State;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.*;
@@ -29,6 +28,8 @@ public class DatabaseConnection {
         }
         return  null;
     }
+
+
     public static void main(String[] args){
         DatabaseConnection databaseConnection = new DatabaseConnection();
         ResultSet rs = databaseConnection.getQueryTable("Select email, first_name from customer");
@@ -40,6 +41,17 @@ public class DatabaseConnection {
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public int executeUpdateQuery(String query){
+        Statement statement = getStatement();
+        try{
+            return statement.executeUpdate(query);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return  0;
     }
 }
 
