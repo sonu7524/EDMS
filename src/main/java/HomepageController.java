@@ -22,10 +22,10 @@ public class HomepageController {
     private Label invalid;
 
     @FXML
-    private Button login;
+    private Label loginMessageLabel;
 
     @FXML
-    private Label loginMessageLabel;
+    private Button logoutButton;
 
     @FXML
     private Label nameLabel;
@@ -39,7 +39,7 @@ public class HomepageController {
     }
 
     @FXML
-    void loginButton(ActionEvent event) {
+    void logouButtonFxn(ActionEvent event) {
 
     }
 

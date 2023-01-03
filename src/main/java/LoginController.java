@@ -51,6 +51,7 @@ public class LoginController {
         String password = passwordTextField.getText();
         try{
             if(log.customerLogin(email,password)){
+                System.out.println(OTPController.genOTP);
                 Parent root = FXMLLoader.load(getClass().getResource("OTP.fxml"));
                 Stage window = (Stage) login.getScene().getWindow();
                 window.setScene(new Scene(root));

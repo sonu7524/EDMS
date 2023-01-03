@@ -9,38 +9,42 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
 public class OTPController {
-    private String genOTP;
-    OTPController(){
-        this.genOTP = GenerateOTP.OTP(6);
-        System.out.println(genOTP);
-    }
 
-        @FXML
-        private Button closeButton;
+    @FXML
+    private Button closeButton;
 
-        @FXML
-        private Label invalid;
+    @FXML
+    private Label invalid;
 
     @FXML
     private Button otpButton;
+    @FXML
+    private Label messageLabel;
 
-        @FXML
-        private TextField otpTextField;
+    public static String genOTP = OTP.generateOTP(6);
 
-        @FXML
-        void closeButtonAction(ActionEvent event) {
-            Stage stage = (Stage) closeButton.getScene().getWindow();
-            stage.close();
-        }
+    @FXML
+    private TextField otpTextField;
+
+    @FXML
+    void closeButtonAction(ActionEvent event) {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
+    }
 
     @FXML
     void otpButtonfxn(ActionEvent event) throws IOException {
         String otp = otpTextField.getText();
-        if(otp.equals(genOTP)){
+        if(OTP.otpVerification(otp,genOTP)){
             Parent root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
             Stage window = (Stage) otpButton.getScene().getWindow();
             window.setScene(new Scene(root));
         }
+        else{
+            messageLabel.setText("Invalid OTP");
+        }
     }
+
 }

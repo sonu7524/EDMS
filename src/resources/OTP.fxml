@@ -38,6 +38,11 @@
                </font>
             </Button>
             <Label fx:id="invalid" layoutX="123.0" layoutY="71.0" prefHeight="18.0" prefWidth="114.0" textFill="WHITE" />
+            <Label fx:id="messageLabel" alignment="CENTER" layoutX="97.0" layoutY="71.0" prefHeight="18.0" prefWidth="166.0" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <ImageView fitHeight="122.0" fitWidth="140.0" layoutX="52.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">

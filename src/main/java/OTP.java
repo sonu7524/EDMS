@@ -1,9 +1,9 @@
 
 import java.util.*;
 
- public class GenerateOTP
+ public class OTP
 {
-    static String OTP(int len)
+    static String generateOTP(int len)
     {
         // Using numeric values
         String numbers = "0123456789";
@@ -23,10 +23,13 @@ import java.util.*;
         }
         return str;
     }
-
+    public static boolean otpVerification(String OTP, String genOTP){
+        if(OTP.equals(genOTP)) return true;
+        return false;
+    }
     public static void main(String[] args)
     {
         int length = 6;
-        System.out.println(OTP(length));
+        System.out.println(generateOTP(length));
     }
 }
