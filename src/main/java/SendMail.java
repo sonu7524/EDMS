@@ -17,9 +17,9 @@ public class SendMail {
         //host set
         properties.put("mail.smtp.host",host);
         properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.socketFactory.port", "800");
+        properties.put("mail.smtp.socketFactory.port", "465");
         properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.port", "800");
+        properties.put("mail.smtp.port", "465");
         // strp 1: to get the session pbject...
         Session session =  Session.getInstance(properties, new Authenticator() {
             @Override
