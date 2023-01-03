@@ -42,7 +42,7 @@ public class RegisterController {
         @FXML
         private Button register;
 
-        Register reg = new Register();
+        Account account = new Account();
 
         @FXML
         void closeButtonAction(ActionEvent event) {
@@ -58,14 +58,14 @@ public class RegisterController {
         }
 
         @FXML
-        void registerButton(ActionEvent event) {
+        void registerButton(ActionEvent event) throws IOException {
             String email = emailTextField.getText();
             String password = passwordTextField.getText();
             String address = addressTextField.getText();
             String firstname = firstName.getText();
             String lastname = lastName.getText();
             String contact = contactTextField.getText();
-            reg.customerRegistration(email,password,firstname,lastname,address, contact);
+            account.customerRegistration(email,password,firstname,lastname,address, contact);
         }
 
     }
